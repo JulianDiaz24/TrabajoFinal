@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}{{ page.titulo }}{% endblock %}
+{% block content %}
+  <h2>{{ page.titulo }}</h2>
+  <h4>{{ page.subtitulo }}</h4>
+  <img src="{{ page.imagen.url }}" alt="Imagen" width="400">
+  <p>{{ page.contenido|safe }}</p>
+  <p><small>Fecha: {{ page.fecha }}</small></p>
+  <a href="{% url 'page-list' %}">← Volver</a>
+{% endblock %}

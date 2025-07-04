@@ -21,6 +21,10 @@ from base import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("saludar/", views.saludar),
-    path("bicha/", views.bicha),
+    path('pages/', PageListView.as_view(), name='page-list'),
+    path('pages/<int:pk>/', PageDetailView.as_view(), name='page-detail'),
+    path('pages/crear/', PageCreateView.as_view(), name='page-create'),
+    path('pages/<int:pk>/editar/', PageUpdateView.as_view(), name='page-edit'),
+    path('pages/<int:pk>/borrar/', PageDeleteView.as_view(), name='page-delete'),
+    path('', include('pages.urls')),
 ]
