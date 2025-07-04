@@ -18,7 +18,12 @@ from django.contrib import admin
 from django.urls import path
 
 from base import views
+from pages.views import PageListView
 
+from .views import (
+    PageListView, PageDetailView, PageCreateView,
+    PageUpdateView, PageDeleteView
+)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('pages/', PageListView.as_view(), name='page-list'),
